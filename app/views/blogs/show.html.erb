@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class='blog'>
+<p>
+  <b>Title:</b>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <font size='-3'>
+    <b>Author:</b> <%= User.find(@blog.user_id).name.to_s %><BR>
+    <b>Email:</b> <%= User.find(@blog.user_id).email.to_s %>
+  </font>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @blog.content %>
+</p>
+<HR>
+
+  <%= Comment.find(@blog.user_id).user_id.to_s %>
+  <%= Comment.find(@blog.user_id).content.to_s %>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
+
+</div>
+
+<div class='comments'>
+</div>
